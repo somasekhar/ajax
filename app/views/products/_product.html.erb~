@@ -1,0 +1,8 @@
+<%= content_tag_for(:li, product) do %>
+    <p class="title"><%= "#{product.title} - [#{product.price}]" %></p>
+    <p class="content"><%= product.content %></p>
+    <p class="image"><%= image_tag product.image.url(:small) %>
+    <span class="age">Posted at <%= time_ago_in_words(product.created_at) %> ago.
+  (<%= link_to 'Delete', product, :confirm => 'Are you sure?', :method => :delete, :remote => true%>)</span>
+<% end %>
+

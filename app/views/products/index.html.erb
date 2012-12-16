@@ -1,0 +1,28 @@
+<div>
+  <h1>
+    <%= link_to "Products" %></h1>
+
+  <div id="timer"> Rendered at: <%= Time.now %></div>
+  <div style=" padding-left    : 500px;">
+    <% if current_user %>
+        <%= link_to "my products", own_dolls_products_path %>
+    <% end %>
+  </div>
+
+  <!--<div id="show_it">
+    <h3> Want to create product</h3>
+  </div>-->
+
+  <div id="product_form">
+    <% if current_user %>
+        <%= render 'form' %>
+    <% end %>
+  </div>
+  <div>
+    <ul id="products">
+      <%= render :partial => @products.reverse %>
+    </ul>
+     <ul>
+    </ul>
+  </div>
+</div>

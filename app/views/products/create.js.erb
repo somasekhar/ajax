@@ -1,0 +1,12 @@
+//$('#products').prepend('<%#= escape_javascript(render(@product)) %>');
+//$('#products > li').first().effect('highlight', {color: 'cyan', mode: 'show'}, 2000);
+//$('#product_form > form')[0].reset();
+
+<%= remotipart_response do %>
+// Display a Javascript alert
+<% if remotipart_submitted? %>
+$('#products').prepend('<%= escape_javascript(render(@product)) %>');
+$('#new_product')[0].reset();
+<% else %>
+<% end %>
+<% end %>

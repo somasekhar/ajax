@@ -1,0 +1,22 @@
+<div style="padding-top: 20px;">
+  <div>
+    <h1>
+    <%= link_to "All Products", products_path %> </h1>
+  </div>
+  <%- unless @own_dolls.blank? %>
+      <% @own_dolls.each do |i| %>
+          <%= i.title %>
+          <p> created by
+          <%= i.user.email %>
+          </p>
+          <%= image_tag(i.image)%>
+          <%= i.price %>
+          <%= i.content %>
+      <% end %>
+  <% end %>
+
+</div>
+ <div>
+   <h2>
+   <%= link_to "back", products_path %></h2>
+ </div>

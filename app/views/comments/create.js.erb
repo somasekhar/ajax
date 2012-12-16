@@ -1,0 +1,9 @@
+<%= remotipart_response do %>
+// Display a Javascript alert
+<% if remotipart_submitted? %>
+$('#new_comment').prepend('<%= escape_javascript(render(@product)) %>');
+$('#new_comment')[0].reset();
+<% else %>
+<% end %>
+<% end %>
+

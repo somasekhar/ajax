@@ -1,0 +1,11 @@
+<h1>Products</h1>
+
+<div id="timer"> Rendered at: <%= Time.now %></div>
+
+<div id="product_form">
+  <%= render 'form' %>
+</div>
+
+<ul id="products">
+  <%= render :partial => @products.reverse %>
+</ul>

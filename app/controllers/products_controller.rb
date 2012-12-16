@@ -7,6 +7,7 @@ class ProductsController < ApplicationController
     @own_dolls = current_user.products
   end
 
+
   def index
 
     @products = Product.all

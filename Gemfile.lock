@@ -105,6 +105,7 @@ GEM
       oauth2 (~> 0.8.0)
       omniauth (~> 1.0)
     orm_adapter (0.4.0)
+    pg (0.14.1)
     polyglot (0.3.3)
     rack (1.4.1)
     rack-cache (1.2)
@@ -168,6 +169,7 @@ DEPENDENCIES
   omniauth-google
   omniauth-linkedin
   paperclip!
+  pg
   rails (= 3.2.8)
   remotipart (~> 0.4)
   sass-rails (~> 3.2.3)

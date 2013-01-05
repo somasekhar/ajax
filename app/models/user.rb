@@ -3,8 +3,10 @@ class User < ActiveRecord::Base
   has_many :authorisations
   has_many :products
   has_many :comments
-
   validates :email, :presence => true
+  #after_create :send_welcome_email
+
+
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
@@ -25,9 +27,14 @@ class User < ActiveRecord::Base
       unless Authorisation.find_by_provider_and_uid(auth_hash["provider"], auth_hash["uid"])
         Authorisation.create( :provider => auth_hash["provider"], :uid => auth_hash["uid"])
       end
-
     end
 
   end
+=begin
+  private
+  def send_welcome_email
+    UserMailer.welcome_email(self).deliver
+  end
+=end
 
 end

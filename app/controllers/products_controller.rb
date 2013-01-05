@@ -7,7 +7,6 @@ class ProductsController < ApplicationController
     @own_dolls = current_user.products
   end
 
-
   def index
 
     @products = Product.all
@@ -25,6 +24,7 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.save
+        #UserMailer.creation(@product).deliver
         format.html { redirect_to products_url, notice: 'Product was successfully created.' }
         format.json { render json: @product, status: :created, location: @product }
         format.js
@@ -42,6 +42,7 @@ class ProductsController < ApplicationController
     @product = current_user.products.find(params[:id])
     @product.destroy
     respond_to do |format|
+      #UserMailer.deletion(@product).deliver
       format.html { redirect_to products_url }
       format.json { head :no_content }
       format.js

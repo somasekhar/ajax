@@ -6,6 +6,13 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-google'
 gem 'omniauth-linkedin'
+group :development do
+  #gem 'sqlite3'
+  gem 'mysql2'
+end
+group :production do
+  gem 'pg'
+end
 
 
 
